@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-02-27T18:17:33.170371" rpa="true" schemaversion="5">
+<suite id="s1" name="Project" source="c:\Users\izpel\OneDrive\Tiedostot\Oppari-RF\project.robot">
+<test id="s1-t1" name="Read CSV file to list" line="28">
+<kw name="Make connection">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-02-27T18:17:33.349304" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-02-27T18:17:33.361835" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-02-27T18:17:33.582615" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
+<msg time="2025-02-27T18:17:33.676477" level="FAIL">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</msg>
+<arg>pymysql</arg>
+<arg>${dbconnect}</arg>
+<arg>${dbuser}</arg>
+<arg>${dbpassword}</arg>
+<arg>${dbhost}</arg>
+<arg>${dbport}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="FAIL" start="2025-02-27T18:17:33.349304" elapsed="0.337582">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+</kw>
+<arg>${dbname}</arg>
+<status status="FAIL" start="2025-02-27T18:17:33.347305" elapsed="0.340652">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<var>${outputHeader}</var>
+<arg>${PATH}InvoiceHeaderData.csv</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" start="2025-02-27T18:17:33.688973" elapsed="0.000000"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<var>${outputRows}</var>
+<arg>${PATH}InvoiceRowData.csv</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="NOT RUN" start="2025-02-27T18:17:33.689871" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${outputHeader}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-27T18:17:33.690890" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${outputRows}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-27T18:17:33.691891" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-27T18:17:33.344302" elapsed="0.348585">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+</test>
+<status status="FAIL" start="2025-02-27T18:17:33.192390" elapsed="0.502500"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Project">Project</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
