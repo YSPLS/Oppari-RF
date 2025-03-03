@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-03-03T12:28:55.918776" rpa="true" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-03-03T12:42:18.255227" rpa="true" schemaversion="5">
 <suite id="s1" name="Project" source="c:\Users\Lassi\Documents\GitHub\Oppari-RF\project.robot">
 <test id="s1-t1" name="Read CSV file to list" line="28">
 <kw name="Make connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-03-03T12:28:55.976715" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
-<msg time="2025-03-03T12:28:55.976715" level="INFO">Configuration file doesn't exist</msg>
-<msg time="2025-03-03T12:28:56.024771" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
+<msg time="2025-03-03T12:42:18.309891" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-03T12:42:18.311891" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-03T12:42:18.371636" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
 <arg>pymysql</arg>
 <arg>${dbconnect}</arg>
 <arg>${dbuser}</arg>
@@ -16,43 +16,43 @@
 <doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
 Along with listed commonly used arguments (`db_name`, `db_host` etc.)
 you can set any other DB module specific parameters as key/value pairs.</doc>
-<status status="PASS" start="2025-03-03T12:28:55.976715" elapsed="0.055346"/>
+<status status="PASS" start="2025-03-03T12:42:18.309891" elapsed="0.067731"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-03-03T12:28:55.975974" elapsed="0.056087"/>
+<status status="PASS" start="2025-03-03T12:42:18.308947" elapsed="0.068675"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-03-03T12:28:56.032061" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv&lt;/a&gt;'.</msg>
-<msg time="2025-03-03T12:28:56.032061" level="INFO">${outputHeader} = ﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
+<msg time="2025-03-03T12:42:18.383553" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T12:42:18.383553" level="INFO">${outputHeader} = ﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
 143143;Service Provider Oy;1431432;15.12.2022;07.04.2021;1234567-8;FI12...</msg>
 <var>${outputHeader}</var>
 <arg>${PATH}InvoiceHeaderData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-03-03T12:28:56.032061" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:42:18.377622" elapsed="0.006938"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2025-03-03T12:28:56.032061" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv&lt;/a&gt;'.</msg>
-<msg time="2025-03-03T12:28:56.032061" level="INFO">${outputRows} = ﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
+<msg time="2025-03-03T12:42:18.384560" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T12:42:18.385559" level="INFO">${outputRows} = ﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
 Installation Services;5;h;60;24;72;372;143143;1
 Replacement Products;10;kpl;105;24;252;1302;143143;2
 Keyboard Logitech...</msg>
 <var>${outputRows}</var>
-<arg>${PATH}\InvoiceRowData.csv</arg>
+<arg>${PATH}InvoiceRowData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2025-03-03T12:28:56.032061" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:42:18.384560" elapsed="0.001290"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-03T12:28:56.035863" level="INFO">﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
+<msg time="2025-03-03T12:42:18.385850" level="INFO">﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
 143143;Service Provider Oy;1431432;15.12.2022;07.04.2021;1234567-8;FI12 3456 7890 1234 56;1350;32400;1674
 1543235;Component  Oy;15432359;01.10.2022;15.10.2022;1234567-9;FI05 1234 5600 7891 01;465;111.6;576.6
 153143;Service Provider Oy;1531439;15.12.2022;01.04.2021;1234567-8;FI12 3456 7890 1234 56;2700;64800;3348
 </msg>
 <arg>${outputHeader}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-03T12:28:56.035863" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-03T12:28:56.035863" level="INFO">﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
+<msg time="2025-03-03T12:42:18.385850" level="INFO">﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
 Installation Services;5;h;60;24;72;372;143143;1
 Replacement Products;10;kpl;105;24;252;1302;143143;2
 Keyboard Logitech;10;kpl;40;24;96;496;1543235;1
@@ -64,11 +64,106 @@ Cleaning Wipes;10;kpl;105;24;252;1302;153143;4
 </msg>
 <arg>${outputRows}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-03T12:28:56.035863" elapsed="0.001011"/>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-03-03T12:28:55.975076" elapsed="0.061798"/>
+<kw name="Split String" owner="String">
+<msg time="2025-03-03T12:42:18.385850" level="INFO">@{headers} = [ ﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount | 143143;Service | Provider | Oy;1431432;15.12.2022;07.04.2021;123456...</msg>
+<var>@{headers}</var>
+<arg>${outputHeader} \n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-03-03T12:42:18.385850" level="INFO">@{Rows} = [ ﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber | Installation Services;5;h;60;24;72;372;143143;1 | Replacement Products;10;kpl;105;24;252;1302;143143;2 | Keyboard ...</msg>
+<var>@{Rows}</var>
+<arg>${outputRows}</arg>
+<arg>\n</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.385850" level="INFO">Length is 21.</msg>
+<msg time="2025-03-03T12:42:18.385850" level="INFO">${Length} = 21</msg>
+<var>${Length}</var>
+<arg>${headers}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.385850" level="INFO">${Length} = 20</msg>
+<var>${Length}</var>
+<arg>${Length}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.385850" elapsed="0.004642"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.390492" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>0</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.390492" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${headers}</arg>
+<arg>${Length}</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.391560" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${headers}</arg>
+<arg>${index}</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.391560" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.392501" level="INFO">Length is 10.</msg>
+<msg time="2025-03-03T12:42:18.392501" level="INFO">${Length} = 10</msg>
+<var>${Length}</var>
+<arg>${Rows}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.392501" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.392501" level="INFO">${Length} = 9</msg>
+<var>${Length}</var>
+<arg>${Length}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.392501" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.393504" level="INFO">${index} = 0</msg>
+<var>${index}</var>
+<arg>0</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.393504" elapsed="0.000000"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${Rows}</arg>
+<arg>${Length}</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.393504" elapsed="0.001000"/>
+</kw>
+<kw name="Remove From List" owner="Collections">
+<arg>${Rows}</arg>
+<arg>${index}</arg>
+<doc>Removes and returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.394504" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.395499" level="INFO">['Installation Services;5;h;60;24;72;372;143143;1', 'Replacement Products;10;kpl;105;24;252;1302;143143;2', 'Keyboard Logitech;10;kpl;40;24;96;496;1543235;1', 'Brother printer;1;kpl;65;24;15.6;80.6;1543235;2', 'Installation Services;5;h;60;24;72;372;153143;1', 'Replacement Products;10;kpl;105;24;252;1302;153143;2', 'Cleaning Services;5;h;60;24;72;372;153143;3', 'Cleaning Wipes;10;kpl;105;24;252;1302;153143;4']</msg>
+<arg>${Rows}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.394504" elapsed="0.000995"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-03T12:42:18.395836" level="INFO">['143143;Service', 'Provider', 'Oy;1431432;15.12.2022;07.04.2021;1234567-8;FI12', '3456', '7890', '1234', '56;1350;32400;1674', '1543235;Component', 'Oy;15432359;01.10.2022;15.10.2022;1234567-9;FI05', '1234', '5600', '7891', '01;465;111.6;576.6', '153143;Service', 'Provider', 'Oy;1531439;15.12.2022;01.04.2021;1234567-8;FI12', '3456', '7890', '1234']</msg>
+<arg>${headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-03T12:42:18.395836" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-03-03T12:42:18.307899" elapsed="0.087937"/>
 </test>
-<status status="PASS" start="2025-03-03T12:28:55.923283" elapsed="0.114587"/>
+<status status="PASS" start="2025-03-03T12:42:18.259924" elapsed="0.137544"/>
 </suite>
 <statistics>
 <total>

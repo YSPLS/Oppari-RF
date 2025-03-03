@@ -31,3 +31,25 @@ Read CSV file to list
     ${outputRows}=    Get File    ${PATH}InvoiceRowData.csv
     Log    ${outputHeader}
     Log    ${outputRows}
+
+    #Row row row
+
+    @{headers}=    Split String    ${outputHeader} \n
+    @{Rows}=    Split String    ${outputRows}    \n
+
+    #cleanup
+
+    ${Length}=    Get Length    ${headers}
+    ${Length}=    Evaluate    ${Length}-1
+    ${index}=    Convert To Integer     0
+    Remove From List    ${headers}    ${Length}
+    Remove From List    ${headers}    ${index}
+
+    ${Length}=    Get Length    ${Rows}
+    ${Length}=    Evaluate    ${Length}-1
+    ${index}=    Convert To Integer     0
+    Remove From List    ${Rows}    ${Length}
+    Remove From List    ${Rows}    ${index}
+
+    Log    ${Rows}
+    Log    ${headers}
