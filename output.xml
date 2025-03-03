@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-02-27T18:17:33.170371" rpa="true" schemaversion="5">
-<suite id="s1" name="Project" source="c:\Users\izpel\OneDrive\Tiedostot\Oppari-RF\project.robot">
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-03-03T12:28:55.918776" rpa="true" schemaversion="5">
+<suite id="s1" name="Project" source="c:\Users\Lassi\Documents\GitHub\Oppari-RF\project.robot">
 <test id="s1-t1" name="Read CSV file to list" line="28">
 <kw name="Make connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-02-27T18:17:33.349304" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
-<msg time="2025-02-27T18:17:33.361835" level="INFO">Configuration file doesn't exist</msg>
-<msg time="2025-02-27T18:17:33.582615" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
-<msg time="2025-02-27T18:17:33.676477" level="FAIL">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</msg>
+<msg time="2025-03-03T12:28:55.976715" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-03T12:28:55.976715" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-03T12:28:56.024771" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
 <arg>pymysql</arg>
 <arg>${dbconnect}</arg>
 <arg>${dbuser}</arg>
@@ -17,45 +16,68 @@
 <doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
 Along with listed commonly used arguments (`db_name`, `db_host` etc.)
 you can set any other DB module specific parameters as key/value pairs.</doc>
-<status status="FAIL" start="2025-02-27T18:17:33.349304" elapsed="0.337582">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+<status status="PASS" start="2025-03-03T12:28:55.976715" elapsed="0.055346"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="FAIL" start="2025-02-27T18:17:33.347305" elapsed="0.340652">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+<status status="PASS" start="2025-03-03T12:28:55.975974" elapsed="0.056087"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
+<msg time="2025-03-03T12:28:56.032061" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceHeaderData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T12:28:56.032061" level="INFO">${outputHeader} = ﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
+143143;Service Provider Oy;1431432;15.12.2022;07.04.2021;1234567-8;FI12...</msg>
 <var>${outputHeader}</var>
 <arg>${PATH}InvoiceHeaderData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="NOT RUN" start="2025-02-27T18:17:33.688973" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:28:56.032061" elapsed="0.000000"/>
 </kw>
 <kw name="Get File" owner="OperatingSystem">
+<msg time="2025-03-03T12:28:56.032061" level="INFO" html="true">Getting file '&lt;a href="file://c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv"&gt;c:\Users\Lassi\Documents\GitHub\Oppari-RF\InvoiceRowData.csv&lt;/a&gt;'.</msg>
+<msg time="2025-03-03T12:28:56.032061" level="INFO">${outputRows} = ﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
+Installation Services;5;h;60;24;72;372;143143;1
+Replacement Products;10;kpl;105;24;252;1302;143143;2
+Keyboard Logitech...</msg>
 <var>${outputRows}</var>
-<arg>${PATH}InvoiceRowData.csv</arg>
+<arg>${PATH}\InvoiceRowData.csv</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="NOT RUN" start="2025-02-27T18:17:33.689871" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:28:56.032061" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-03-03T12:28:56.035863" level="INFO">﻿InvoiceNumber;CompanyName;ReferanceNumber;InvoiceDate;DueDate;CompanyCode;BankAccountNumber;AmountExclVAT;VATAmount;TotalAmount
+143143;Service Provider Oy;1431432;15.12.2022;07.04.2021;1234567-8;FI12 3456 7890 1234 56;1350;32400;1674
+1543235;Component  Oy;15432359;01.10.2022;15.10.2022;1234567-9;FI05 1234 5600 7891 01;465;111.6;576.6
+153143;Service Provider Oy;1531439;15.12.2022;01.04.2021;1234567-8;FI12 3456 7890 1234 56;2700;64800;3348
+</msg>
 <arg>${outputHeader}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-02-27T18:17:33.690890" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:28:56.035863" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2025-03-03T12:28:56.035863" level="INFO">﻿Description;Quantity;Unit;UnitPrice;VATPercent;VAT;Total;InvoiceNumber;RowNumber
+Installation Services;5;h;60;24;72;372;143143;1
+Replacement Products;10;kpl;105;24;252;1302;143143;2
+Keyboard Logitech;10;kpl;40;24;96;496;1543235;1
+Brother printer;1;kpl;65;24;15.6;80.6;1543235;2
+Installation Services;5;h;60;24;72;372;153143;1
+Replacement Products;10;kpl;105;24;252;1302;153143;2
+Cleaning Services;5;h;60;24;72;372;153143;3
+Cleaning Wipes;10;kpl;105;24;252;1302;153143;4
+</msg>
 <arg>${outputRows}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-02-27T18:17:33.691891" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-03T12:28:56.035863" elapsed="0.001011"/>
 </kw>
-<status status="FAIL" start="2025-02-27T18:17:33.344302" elapsed="0.348585">OperationalError: (1044, "Access denied for user 'robotuser'@'localhost' to database 'rpakurssi'")</status>
+<status status="PASS" start="2025-03-03T12:28:55.975076" elapsed="0.061798"/>
 </test>
-<status status="FAIL" start="2025-02-27T18:17:33.192390" elapsed="0.502500"/>
+<status status="PASS" start="2025-03-03T12:28:55.923283" elapsed="0.114587"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tasks</stat>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Project">Project</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Project">Project</stat>
 </suite>
 </statistics>
 <errors>

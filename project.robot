@@ -7,13 +7,13 @@ Library    DatabaseLibrary
 
 *** Variables ***
 
-${PATH}    C:\\
+${PATH}    ${CURDIR}/
 # Polku jokaisella erilainen
 
 # Database Variables
 ${dbname}    rpakurssi
 ${dbuser}    robotuser
-${dbpassword}    ---
+${dbpassword}    password
 ${dbhost}    localhost
 ${dbport}    3306
 
