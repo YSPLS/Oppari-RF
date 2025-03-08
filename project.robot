@@ -92,3 +92,20 @@ Read CSV file to list and add to database
         Add Invoice Row to DB    ${rowItems}
         
     END
+
+*** Tasks ***
+Validation
+
+    Make connection    ${dbname}
+
+    ${Invoices}=    Query    select invoicenumber, referrencenumber, bankaccountnumber, totalamount from invoiceheader where invoicestatus_id = 1; 
+    FOR    ${element}    IN    @{Invoices}
+        Log    ${element}
+        ${invoiceStatus}=    Set Variable    0
+        ${InvoiceComment}=    Set Variable    All ok
+
+
+        @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
+        ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
+        Execute Sql String    ${updateStmt}    parameters=${params}
+    END
