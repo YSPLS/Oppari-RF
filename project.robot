@@ -5,11 +5,13 @@ Library    String
 Library    Collections
 Library    DatabaseLibrary
 Library    DateTime
+Library    validate.py
+Library    XML
 
 *** Variables ***
 
 ${PATH}    ${CURDIR}/
-# Polku jokaisella erilainen
+${COUNTER}    0
 
 # Database Variables
 ${dbname}    rpakurssi
@@ -45,6 +47,28 @@ Add Invoice Row to DB
     Execute Sql String    ${insertStmt}
     Disconnect From Database
     
+*** Keywords ***
+Check IBAN
+    [Arguments]    ${iban}
+    ${status}=    Set Variable    ${False}
+    ${iban}=    Remove String    ${iban}    ${SPACE}
+    ${lenght}=    Get Length    ${iban}
+    IF    ${lenght} == 18
+        ${status}    Set Variable    ${True}
+    END
+    RETURN     ${status}
+*** Keywords ***
+Check amount from invoice
+    [Arguments]    ${TotalSumFromHeaders}    ${TotalSumFromRows}
+    ${status}=    Set Variable    ${False}
+
+    ${TotalSumFromHeaders}=    Convert To Number    ${TotalSumFromHeaders}
+    ${TotalSumFromRows}=    Convert To Number    ${TotalSumFromRows}
+    ${diff}=    Convert To Number    0.01
+    ${status}=    Is Equal    ${TotalSumFromHeaders}    ${TotalSumFromRows}    ${diff}
+
+    RETURN    ${status}
+
 *** Tasks ***
 
 Read CSV file to list and add to database
@@ -97,15 +121,57 @@ Read CSV file to list and add to database
 Validation
 
     Make connection    ${dbname}
+    ${RowInfo}=    Query    select invoicenumber, total from invoicerow;
+    ${Invoices}=    Query    select invoicenumber, referencenumber, bankaccountnumber, totalamount from invoiceheader; 
+    @{summed_amounts}=    Create List
+    FOR    ${Row}    IN    @{RowInfo}
+        Log    ${Row}
+        ${invoice_number}=    Set Variable    ${Row}[0]
+        ${amounts}=    Query    SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';
+        ${summed_amount}=    Set Variable    0
+    FOR    ${item}    IN    @{amounts}
+        ${summed_amount}=    Evaluate    ${summed_amount} + ${item}[0]
+    END
+    Append To List    ${summed_amounts}    ${summed_amount}
 
-    ${Invoices}=    Query    select invoicenumber, referrencenumber, bankaccountnumber, totalamount from invoiceheader where invoicestatus_id = 1; 
+    END
+    @{summed_amounts}=    Remove Duplicates    ${summed_amounts}
+    Log    ${summed_amounts}
+        #Iban tarkastaminen
     FOR    ${element}    IN    @{Invoices}
         Log    ${element}
-        ${invoiceStatus}=    Set Variable    0
-        ${InvoiceComment}=    Set Variable    All ok
+        ${status}=    Check IBAN    ${element}[2]
+        IF    not ${status}
 
-
+            ${invoiceStatus}=    Set Variable    2
+            ${InvoiceComment}=    Set Variable    iban error
+            Log    IBAN KUSI
+            @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
+            ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
+            Execute Sql String    ${updateStmt}    parameters=${params}
+            
+        END
+            #hinnan tarkastus
+        ${total_amount}=    Set Variable    ${element}[3]   
+        ${status}=    Check amount from invoice    ${total_amount}    ${summed_amounts}[${COUNTER}]
+        IF    not ${status}
+        ${invoiceStatus}=    Set Variable    3
+        ${InvoiceComment}=    Set Variable    Amount error
+        Log    HINTA KUSI
         @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}
-    END
+            
+        END
+        ${COUNTER}=    Set Variable    ${{${COUNTER} + 1}}
+
+        ${invoiceStatus}=    Set Variable    0
+        ${InvoiceComment}=    Set Variable    All ok
+        
+
+
+        #@{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
+        #${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
+        #Execute Sql String    ${updateStmt}    parameters=${params}
+
+        END
