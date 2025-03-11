@@ -69,6 +69,23 @@ Check amount from invoice
 
     RETURN    ${status}
 
+*** Keywords ***
+Check Reference Number
+    [Arguments]    ${invoice_number}    ${Reference_number}
+    ${status}=    Set Variable    ${False}
+
+    ${invoice_number}    Convert To String    ${invoice_number}
+    ${reference_number}    Convert To String    ${reference_number}
+
+    ${invoice_lenght}=    Get Length    ${invoice_number}
+    ${reference_lenght}=    Get Length    ${reference_number}
+    ${is_longer}=    Evaluate    ${reference_lenght} > ${invoice_lenght}
+    ${starts_with_invoice}=    Evaluate    '${reference_number}'.startswith('${invoice_number}')
+    IF    ${is_longer} and ${starts_with_invoice} 
+        ${status}=    Set Variable    ${True}
+    END
+    RETURN    ${status}
+
 *** Tasks ***
 
 Read CSV file to list and add to database
@@ -163,10 +180,21 @@ Validation
         Execute Sql String    ${updateStmt}    parameters=${params}
             
         END
+            #viitenumero tarkastus
+        ${status}=    Check Reference Number    ${element}[0]    ${element}[1]
+        IF    not ${status}
+        ${invoiceStatus}=    Set Variable    1
+        ${InvoiceComment}=    Set Variable    ref error
+        Log    HINTA KUSI
+        @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
+        ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
+        Execute Sql String    ${updateStmt}    parameters=${params}            
+        END
+
         ${COUNTER}=    Set Variable    ${{${COUNTER} + 1}}
 
-        ${invoiceStatus}=    Set Variable    0
-        ${InvoiceComment}=    Set Variable    All ok
+        #${invoiceStatus}=    Set Variable    0
+        #${InvoiceComment}=    Set Variable    All ok
         
 
 
