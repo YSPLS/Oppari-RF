@@ -95,12 +95,12 @@ Read CSV file to list and add to database
     Log    ${outputHeader}
     Log    ${outputRows}
 
-    #Row row row
+    #Rivitystä
 
     @{headers}=    Split String    ${outputHeader}    \n
     @{Rows}=    Split String    ${outputRows}    \n
 
-    #cleanup
+    #muuttujien siistimistä
 
     ${Length}=    Get Length    ${headers}
     ${Length}=    Evaluate    ${Length}-1
@@ -117,7 +117,7 @@ Read CSV file to list and add to database
     Log    ${Rows}
     Log    ${headers}
 
-    ###New database shit
+    #Lisää headertieto
 
     FOR    ${headersElement}    IN    @{headers}
         @{HeadersItem}=    Split String    ${headersElement}    ;
@@ -125,7 +125,7 @@ Read CSV file to list and add to database
         Add Invoice Header to DB    ${HeadersItem}
     END
 
-    ##Rowdata
+    # Lisää rivitieto
     FOR    ${rowElement}    IN    @{Rows}
         Log    ${rowElement}
         @{rowItems}=    Split String    ${rowElement}    ;
@@ -136,7 +136,7 @@ Read CSV file to list and add to database
 
 *** Tasks ***
 Validation
-
+    ${errors_found}=    Set Variable    ${False}
     Make connection    ${dbname}
     ${RowInfo}=    Query    select invoicenumber, total from invoicerow;
     ${Invoices}=    Query    select invoicenumber, referencenumber, bankaccountnumber, totalamount from invoiceheader; 
@@ -155,6 +155,7 @@ Validation
     @{summed_amounts}=    Remove Duplicates    ${summed_amounts}
     Log    ${summed_amounts}
         #Iban tarkastaminen
+
     FOR    ${element}    IN    @{Invoices}
         Log    ${element}
         ${status}=    Check IBAN    ${element}[2]
@@ -162,7 +163,8 @@ Validation
 
             ${invoiceStatus}=    Set Variable    2
             ${InvoiceComment}=    Set Variable    iban error
-            Log    IBAN KUSI
+            ${errors_found}=    Set Variable    ${True}
+
             @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
             ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
             Execute Sql String    ${updateStmt}    parameters=${params}
@@ -172,9 +174,11 @@ Validation
         ${total_amount}=    Set Variable    ${element}[3]   
         ${status}=    Check amount from invoice    ${total_amount}    ${summed_amounts}[${COUNTER}]
         IF    not ${status}
+
         ${invoiceStatus}=    Set Variable    3
         ${InvoiceComment}=    Set Variable    Amount error
-        Log    HINTA KUSI
+        ${errors_found}=    Set Variable    ${True}
+
         @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}
@@ -182,10 +186,12 @@ Validation
         END
             #viitenumero tarkastus
         ${status}=    Check Reference Number    ${element}[0]    ${element}[1]
+
         IF    not ${status}
         ${invoiceStatus}=    Set Variable    1
         ${InvoiceComment}=    Set Variable    ref error
-        Log    HINTA KUSI
+        ${errors_found}=    Set Variable    ${True}
+
         @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
         ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
         Execute Sql String    ${updateStmt}    parameters=${params}            
@@ -193,13 +199,13 @@ Validation
 
         ${COUNTER}=    Set Variable    ${{${COUNTER} + 1}}
 
-        #${invoiceStatus}=    Set Variable    0
-        #${InvoiceComment}=    Set Variable    All ok
-        
-
-
-        #@{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
-        #${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
-        #Execute Sql String    ${updateStmt}    parameters=${params}
+        IF    not ${errors_found}
+        ${invoiceStatus}=    Set Variable    0
+        ${InvoiceComment}=    Set Variable    All ok
+    
+        @{params}=    Create List    ${invoiceStatus}    ${InvoiceComment}    ${element}[0]
+        ${updateStmt}=    Set Variable    update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;
+        Execute Sql String    ${updateStmt}    parameters=${params}            
+        END
 
         END

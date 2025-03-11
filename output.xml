@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-03-11T21:46:04.370953" rpa="true" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2025-03-11T21:56:47.303765" rpa="true" schemaversion="5">
 <suite id="s1" name="Project" source="c:\Users\Lassi\Documents\GitHub\Oppari-RF\project.robot">
 <test id="s1-t1" name="Validation" line="138">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.367521" level="INFO">${errors_found} = False</msg>
+<var>${errors_found}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.367521" elapsed="0.001100"/>
+</kw>
 <kw name="Make connection">
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.429841" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
-<msg time="2025-03-11T21:46:04.439851" level="INFO">Configuration file doesn't exist</msg>
-<msg time="2025-03-11T21:46:04.482966" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
+<msg time="2025-03-11T21:56:47.370621" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-11T21:56:47.370621" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-11T21:56:47.412242" level="INFO">Connect to DB using : pymysql.connect(db='rpakurssi', user='robotuser', passwd=***, host='localhost', port=3306, charset='utf8mb4')</msg>
 <arg>pymysql</arg>
 <arg>${dbconnect}</arg>
 <arg>${dbuser}</arg>
@@ -16,753 +23,753 @@
 <doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
 Along with listed commonly used arguments (`db_name`, `db_host` etc.)
 you can set any other DB module specific parameters as key/value pairs.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.429841" elapsed="0.072289"/>
+<status status="PASS" start="2025-03-11T21:56:47.369621" elapsed="0.049624"/>
 </kw>
 <arg>${dbname}</arg>
-<status status="PASS" start="2025-03-11T21:46:04.429841" elapsed="0.072289"/>
+<status status="PASS" start="2025-03-11T21:56:47.369621" elapsed="0.049624"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.502130" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select invoicenumber, total from invoicerow;&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 8 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;invoicenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;4&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;5&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;6&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;7&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO">${RowInfo} = ((143143, Decimal('372.00')), (143143, Decimal('1302.00')), (153143, Decimal('372.00')), (153143, Decimal('1302.00')), (153143, Decimal('372.00')), (153143, Decimal('1302.00')), (1543235, Decimal('496...</msg>
+<msg time="2025-03-11T21:56:47.420243" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select invoicenumber, total from invoicerow;&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.420243" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.421241" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 8 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;invoicenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;4&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;5&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;6&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;7&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.421241" level="INFO">${RowInfo} = ((143143, Decimal('372.00')), (143143, Decimal('1302.00')), (153143, Decimal('372.00')), (153143, Decimal('1302.00')), (153143, Decimal('372.00')), (153143, Decimal('1302.00')), (1543235, Decimal('496...</msg>
 <var>${RowInfo}</var>
 <arg>select invoicenumber, total from invoicerow;</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.419245" elapsed="0.001996"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.502130" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select invoicenumber, referencenumber, bankaccountnumber, totalamount from invoiceheader;&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 3 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;invoicenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;referencenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;bankaccountnumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;totalamount&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1431432&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI12 3456 7890 1234 56&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1674.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1531439&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI12 3456 7890 1234 56&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3348.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;15432359&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI05 1234 5600 7891 01&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;576.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.502130" level="INFO">${Invoices} = ((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60')...</msg>
+<msg time="2025-03-11T21:56:47.422251" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select invoicenumber, referencenumber, bankaccountnumber, totalamount from invoiceheader;&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.422251" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.422251" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 3 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;invoicenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;referencenumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;bankaccountnumber&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;totalamount&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;143143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1431432&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI12 3456 7890 1234 56&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1674.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;153143&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1531439&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI12 3456 7890 1234 56&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3348.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1543235&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;15432359&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;FI05 1234 5600 7891 01&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;576.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.423248" level="INFO">${Invoices} = ((143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00')), (153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00')), (1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60')...</msg>
 <var>${Invoices}</var>
 <arg>select invoicenumber, referencenumber, bankaccountnumber, totalamount from invoiceheader;</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.421241" elapsed="0.002007"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.502130" level="INFO">@{summed_amounts} = [ ]</msg>
+<msg time="2025-03-11T21:56:47.423248" level="INFO">@{summed_amounts} = [ ]</msg>
 <var>@{summed_amounts}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.423248" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.502130" level="INFO">(143143, Decimal('372.00'))</msg>
+<msg time="2025-03-11T21:56:47.425245" level="INFO">(143143, Decimal('372.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.424246" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.502130" level="INFO">${invoice_number} = 143143</msg>
+<msg time="2025-03-11T21:56:47.425245" level="INFO">${invoice_number} = 143143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.425245" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.502130" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '143143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.425245" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '143143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.426246" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.427247" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.427247" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.009922"/>
+<status status="PASS" start="2025-03-11T21:56:47.425245" elapsed="0.002002"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.427247" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.427247" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.428246" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.428246" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.427247" elapsed="0.000999"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.428246" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.428246" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.428246" elapsed="0.001000"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.427247" elapsed="0.001999"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.429246" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(143143, Decimal('372.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.009922"/>
+<status status="PASS" start="2025-03-11T21:56:47.424246" elapsed="0.005000"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">(143143, Decimal('1302.00'))</msg>
+<msg time="2025-03-11T21:56:47.430246" level="INFO">(143143, Decimal('1302.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.429246" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${invoice_number} = 143143</msg>
+<msg time="2025-03-11T21:56:47.430246" level="INFO">${invoice_number} = 143143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.430246" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.512052" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '143143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.430246" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '143143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.431245" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.431245" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.431245" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.430246" elapsed="0.002001"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.512052" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.432247" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.009998"/>
+<status status="PASS" start="2025-03-11T21:56:47.432247" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.522050" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.433246" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.432247" elapsed="0.000999"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.432247" elapsed="0.000999"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.522050" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.433246" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.433246" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.433246" elapsed="0.000000"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.432247" elapsed="0.000999"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.522050" elapsed="0.002892"/>
+<status status="PASS" start="2025-03-11T21:56:47.434246" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(143143, Decimal('1302.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.512052" elapsed="0.012890"/>
+<status status="PASS" start="2025-03-11T21:56:47.429246" elapsed="0.005000"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.524942" level="INFO">(153143, Decimal('372.00'))</msg>
+<msg time="2025-03-11T21:56:47.434246" level="INFO">(153143, Decimal('372.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.524942" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.434246" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.525952" level="INFO">${invoice_number} = 153143</msg>
+<msg time="2025-03-11T21:56:47.435247" level="INFO">${invoice_number} = 153143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.524942" elapsed="0.001010"/>
+<status status="PASS" start="2025-03-11T21:56:47.434246" elapsed="0.001001"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.525952" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.527105" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.527482" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.527482" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.435247" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.435247" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.436246" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.436246" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.525952" elapsed="0.002549"/>
+<status status="PASS" start="2025-03-11T21:56:47.435247" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.528501" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.436246" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.528501" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.436246" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.530009" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.436246" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.529504" elapsed="0.000505"/>
+<status status="PASS" start="2025-03-11T21:56:47.436246" elapsed="0.001497"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.529504" elapsed="0.000505"/>
+<status status="PASS" start="2025-03-11T21:56:47.436246" elapsed="0.001497"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.530009" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.437743" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.530009" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.437743" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.530009" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.437743" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.530009" level="INFO">${summed_amount} = 2046.0</msg>
+<msg time="2025-03-11T21:56:47.438757" level="INFO">${summed_amount} = 2046.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.530009" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.437743" elapsed="0.001081"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.530009" elapsed="0.003502"/>
+<status status="PASS" start="2025-03-11T21:56:47.437743" elapsed="0.001162"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.534133" level="INFO">${summed_amount} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.438905" level="INFO">${summed_amount} = 3348.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.438905" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.533511" elapsed="0.000622"/>
+<status status="PASS" start="2025-03-11T21:56:47.438905" elapsed="0.000000"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.528501" elapsed="0.005632"/>
+<status status="PASS" start="2025-03-11T21:56:47.436246" elapsed="0.002659"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.438905" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(153143, Decimal('372.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.524942" elapsed="0.009191"/>
+<status status="PASS" start="2025-03-11T21:56:47.434246" elapsed="0.004659"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.534133" level="INFO">(153143, Decimal('1302.00'))</msg>
+<msg time="2025-03-11T21:56:47.439917" level="INFO">(153143, Decimal('1302.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.439917" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.534133" level="INFO">${invoice_number} = 153143</msg>
+<msg time="2025-03-11T21:56:47.439917" level="INFO">${invoice_number} = 153143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.439917" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.534133" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.538645" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.538645" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.538645" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.439917" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.440914" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.440914" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.440914" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.004512"/>
+<status status="PASS" start="2025-03-11T21:56:47.439917" elapsed="0.000997"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.538645" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.441907" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.538645" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.441907" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.540591" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.442907" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.540591" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.441907" elapsed="0.001000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.540591" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.441907" elapsed="0.001000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.541674" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.442907" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.540591" elapsed="0.001083"/>
+<status status="PASS" start="2025-03-11T21:56:47.442907" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.540591" elapsed="0.001083"/>
+<status status="PASS" start="2025-03-11T21:56:47.442907" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.541674" level="INFO">${summed_amount} = 2046.0</msg>
+<msg time="2025-03-11T21:56:47.443906" level="INFO">${summed_amount} = 2046.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.541674" elapsed="0.000935"/>
+<status status="PASS" start="2025-03-11T21:56:47.443906" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.541674" elapsed="0.000935"/>
+<status status="PASS" start="2025-03-11T21:56:47.442907" elapsed="0.000999"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.542609" level="INFO">${summed_amount} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.443906" level="INFO">${summed_amount} = 3348.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.542609" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.443906" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.542609" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.443906" elapsed="0.001009"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.538645" elapsed="0.003964"/>
+<status status="PASS" start="2025-03-11T21:56:47.441907" elapsed="0.003008"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.542609" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-11T21:56:47.444915" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(153143, Decimal('1302.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.534133" elapsed="0.009477"/>
+<status status="PASS" start="2025-03-11T21:56:47.439917" elapsed="0.004998"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.543610" level="INFO">(153143, Decimal('372.00'))</msg>
+<msg time="2025-03-11T21:56:47.444915" level="INFO">(153143, Decimal('372.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.543610" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.444915" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.543610" level="INFO">${invoice_number} = 153143</msg>
+<msg time="2025-03-11T21:56:47.445916" level="INFO">${invoice_number} = 153143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.543610" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.444915" elapsed="0.001001"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.544609" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.544609" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.545600" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.545600" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.445916" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.445916" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.446908" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.446908" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.544609" elapsed="0.000991"/>
+<status status="PASS" start="2025-03-11T21:56:47.445916" elapsed="0.000992"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.546602" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.446908" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.546602" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.446908" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.549215" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.447907" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.548662" elapsed="0.000553"/>
+<status status="PASS" start="2025-03-11T21:56:47.447907" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.547659" elapsed="0.001556"/>
+<status status="PASS" start="2025-03-11T21:56:47.447907" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.549215" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.448907" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.447907" elapsed="0.001000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.447907" elapsed="0.001110"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.549215" level="INFO">${summed_amount} = 2046.0</msg>
+<msg time="2025-03-11T21:56:47.449017" level="INFO">${summed_amount} = 2046.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.449017" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.449017" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.554418" level="INFO">${summed_amount} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.449017" level="INFO">${summed_amount} = 3348.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.005203"/>
+<status status="PASS" start="2025-03-11T21:56:47.449017" elapsed="0.001013"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.549215" elapsed="0.005203"/>
+<status status="PASS" start="2025-03-11T21:56:47.449017" elapsed="0.001013"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.547659" elapsed="0.006759"/>
+<status status="PASS" start="2025-03-11T21:56:47.446908" elapsed="0.003122"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.554418" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.450030" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(153143, Decimal('372.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.543610" elapsed="0.011817"/>
+<status status="PASS" start="2025-03-11T21:56:47.444915" elapsed="0.005115"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.555427" level="INFO">(153143, Decimal('1302.00'))</msg>
+<msg time="2025-03-11T21:56:47.450030" level="INFO">(153143, Decimal('1302.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.555427" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.450030" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.556436" level="INFO">${invoice_number} = 153143</msg>
+<msg time="2025-03-11T21:56:47.451026" level="INFO">${invoice_number} = 153143</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.555427" elapsed="0.001009"/>
+<status status="PASS" start="2025-03-11T21:56:47.451026" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.556436" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.557429" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.558437" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.558437" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
+<msg time="2025-03-11T21:56:47.451026" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '153143';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.452019" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.452019" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;372.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1302.00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.452019" level="INFO">${amounts} = ((Decimal('372.00'),), (Decimal('1302.00'),), (Decimal('372.00'),), (Decimal('1302.00'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.556436" elapsed="0.002001"/>
+<status status="PASS" start="2025-03-11T21:56:47.451026" elapsed="0.000993"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.558437" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.453020" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.558437" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.452019" elapsed="0.001001"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.559425" level="INFO">${summed_amount} = 372.0</msg>
+<msg time="2025-03-11T21:56:47.453020" level="INFO">${summed_amount} = 372.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.559425" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.453020" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.558437" elapsed="0.000988"/>
+<status status="PASS" start="2025-03-11T21:56:47.453020" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.559425" level="INFO">${summed_amount} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.454028" level="INFO">${summed_amount} = 1674.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.559425" elapsed="0.001003"/>
+<status status="PASS" start="2025-03-11T21:56:47.453020" elapsed="0.001008"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.559425" elapsed="0.001003"/>
+<status status="PASS" start="2025-03-11T21:56:47.453020" elapsed="0.001008"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.560886" level="INFO">${summed_amount} = 2046.0</msg>
+<msg time="2025-03-11T21:56:47.454028" level="INFO">${summed_amount} = 2046.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.560428" elapsed="0.000458"/>
+<status status="PASS" start="2025-03-11T21:56:47.454028" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('372.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.560428" elapsed="0.000843"/>
+<status status="PASS" start="2025-03-11T21:56:47.454028" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.561271" level="INFO">${summed_amount} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.455035" level="INFO">${summed_amount} = 3348.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.561271" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.455035" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('1302.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.561271" elapsed="0.001016"/>
+<status status="PASS" start="2025-03-11T21:56:47.454028" elapsed="0.001007"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.558437" elapsed="0.003850"/>
+<status status="PASS" start="2025-03-11T21:56:47.453020" elapsed="0.002015"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.562287" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.455035" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(153143, Decimal('1302.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.555427" elapsed="0.006860"/>
+<status status="PASS" start="2025-03-11T21:56:47.450030" elapsed="0.005005"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.563290" level="INFO">(1543235, Decimal('496.00'))</msg>
+<msg time="2025-03-11T21:56:47.456026" level="INFO">(1543235, Decimal('496.00'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.563290" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.455035" elapsed="0.000991"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.563290" level="INFO">${invoice_number} = 1543235</msg>
+<msg time="2025-03-11T21:56:47.456026" level="INFO">${invoice_number} = 1543235</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.563290" elapsed="0.000989"/>
+<status status="PASS" start="2025-03-11T21:56:47.456026" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.564618" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '1543235';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.564618" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.564618" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.564618" level="INFO">${amounts} = ((Decimal('496.00'),), (Decimal('80.60'),))</msg>
+<msg time="2025-03-11T21:56:47.456026" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '1543235';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.457029" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.457029" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.457029" level="INFO">${amounts} = ((Decimal('496.00'),), (Decimal('80.60'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.564279" elapsed="0.000339"/>
+<status status="PASS" start="2025-03-11T21:56:47.456026" elapsed="0.001003"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.564618" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.458019" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.457029" elapsed="0.000990"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.564618" level="INFO">${summed_amount} = 496.0</msg>
+<msg time="2025-03-11T21:56:47.458019" level="INFO">${summed_amount} = 496.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.458019" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('496.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.458019" elapsed="0.001005"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568232" level="INFO">${summed_amount} = 576.6</msg>
+<msg time="2025-03-11T21:56:47.459150" level="INFO">${summed_amount} = 576.6</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.004060"/>
+<status status="PASS" start="2025-03-11T21:56:47.459150" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('80.60'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.004060"/>
+<status status="PASS" start="2025-03-11T21:56:47.459150" elapsed="0.000000"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.564618" elapsed="0.004060"/>
+<status status="PASS" start="2025-03-11T21:56:47.458019" elapsed="0.001131"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.459150" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(1543235, Decimal('496.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.562287" elapsed="0.006391"/>
+<status status="PASS" start="2025-03-11T21:56:47.455035" elapsed="0.004115"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568678" level="INFO">(1543235, Decimal('80.60'))</msg>
+<msg time="2025-03-11T21:56:47.460152" level="INFO">(1543235, Decimal('80.60'))</msg>
 <arg>${Row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.460152" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568678" level="INFO">${invoice_number} = 1543235</msg>
+<msg time="2025-03-11T21:56:47.460152" level="INFO">${invoice_number} = 1543235</msg>
 <var>${invoice_number}</var>
 <arg>${Row}[0]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.460152" elapsed="0.000000"/>
 </kw>
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-03-11T21:46:04.568678" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '1543235';&lt;/code&gt;</msg>
-<msg time="2025-03-11T21:46:04.568678" level="INFO">Commit the transaction</msg>
-<msg time="2025-03-11T21:46:04.568678" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-03-11T21:46:04.568678" level="INFO">${amounts} = ((Decimal('496.00'),), (Decimal('80.60'),))</msg>
+<msg time="2025-03-11T21:56:47.460152" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT total FROM invoicerow WHERE invoicenumber = '1543235';&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.462163" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-11T21:56:47.462163" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 2 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;total&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;496.00&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;80.60&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-11T21:56:47.462163" level="INFO">${amounts} = ((Decimal('496.00'),), (Decimal('80.60'),))</msg>
 <var>${amounts}</var>
 <arg>SELECT total FROM invoicerow WHERE invoicenumber = '${invoice_number}';</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.460152" elapsed="0.002999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568678" level="INFO">${summed_amount} = 0</msg>
+<msg time="2025-03-11T21:56:47.463151" level="INFO">${summed_amount} = 0</msg>
 <var>${summed_amount}</var>
 <arg>0</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.463151" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568678" level="INFO">${summed_amount} = 496.0</msg>
+<msg time="2025-03-11T21:56:47.464154" level="INFO">${summed_amount} = 496.0</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.464154" elapsed="0.000000"/>
 </kw>
 <var name="${item}">(Decimal('496.00'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.463151" elapsed="0.001003"/>
 </iter>
 <iter>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.568678" level="INFO">${summed_amount} = 576.6</msg>
+<msg time="2025-03-11T21:56:47.465152" level="INFO">${summed_amount} = 576.6</msg>
 <var>${summed_amount}</var>
 <arg>${summed_amount} + ${item}[0]</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.464154" elapsed="0.000998"/>
 </kw>
 <var name="${item}">(Decimal('80.60'),)</var>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.464154" elapsed="0.000998"/>
 </iter>
 <var>${item}</var>
 <value>@{amounts}</value>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.006502"/>
+<status status="PASS" start="2025-03-11T21:56:47.463151" elapsed="0.002001"/>
 </for>
 <kw name="Append To List" owner="Collections">
 <arg>${summed_amounts}</arg>
 <arg>${summed_amount}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575180" elapsed="0.000448"/>
+<status status="PASS" start="2025-03-11T21:56:47.465152" elapsed="0.000000"/>
 </kw>
 <var name="${Row}">(1543235, Decimal('80.60'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.568678" elapsed="0.006950"/>
+<status status="PASS" start="2025-03-11T21:56:47.459150" elapsed="0.006002"/>
 </iter>
 <var>${Row}</var>
 <value>@{RowInfo}</value>
-<status status="PASS" start="2025-03-11T21:46:04.502130" elapsed="0.073498"/>
+<status status="PASS" start="2025-03-11T21:56:47.424246" elapsed="0.040906"/>
 </for>
 <kw name="Remove Duplicates" owner="Collections">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">5 duplicates removed.</msg>
-<msg time="2025-03-11T21:46:04.575628" level="INFO">@{summed_amounts} = [ 1674.0 | 3348.0 | 576.6 ]</msg>
+<msg time="2025-03-11T21:56:47.466153" level="INFO">5 duplicates removed.</msg>
+<msg time="2025-03-11T21:56:47.466153" level="INFO">@{summed_amounts} = [ 1674.0 | 3348.0 | 576.6 ]</msg>
 <var>@{summed_amounts}</var>
 <arg>${summed_amounts}</arg>
 <doc>Returns a list without duplicates based on the given ``list``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.466153" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">[1674.0, 3348.0, 576.6]</msg>
+<msg time="2025-03-11T21:56:47.467153" level="INFO">[1674.0, 3348.0, 576.6]</msg>
 <arg>${summed_amounts}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.466153" elapsed="0.001000"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">(143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'))</msg>
+<msg time="2025-03-11T21:56:47.468153" level="INFO">(143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'))</msg>
 <arg>${element}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.468153" elapsed="0.000000"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.469152" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.468153" elapsed="0.001117"/>
 </kw>
 <kw name="Remove String" owner="String">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">${iban} = FI1234567890123456</msg>
+<msg time="2025-03-11T21:56:47.469270" level="INFO">${iban} = FI1234567890123456</msg>
 <var>${iban}</var>
 <arg>${iban}</arg>
 <arg>${SPACE}</arg>
 <doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.469270" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">Length is 18.</msg>
-<msg time="2025-03-11T21:46:04.575628" level="INFO">${lenght} = 18</msg>
+<msg time="2025-03-11T21:56:47.469270" level="INFO">Length is 18.</msg>
+<msg time="2025-03-11T21:56:47.469270" level="INFO">${lenght} = 18</msg>
 <var>${lenght}</var>
 <arg>${iban}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.469270" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${lenght} == 18">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.575628" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.470271" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.470271" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.469270" elapsed="0.001001"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.469270" elapsed="0.001001"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.470271" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.575628" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.470271" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[2]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.468153" elapsed="0.002118"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -770,18 +777,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.575628" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582096" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>IBAN KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -789,77 +802,77 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.471279" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.575628" elapsed="0.006847"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.470271" elapsed="0.001008"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.006847"/>
+<status status="PASS" start="2025-03-11T21:56:47.470271" elapsed="0.001008"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${total_amount} = 1674.00</msg>
+<msg time="2025-03-11T21:56:47.472794" level="INFO">${total_amount} = 1674.00</msg>
 <var>${total_amount}</var>
 <arg>${element}[3]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.471279" elapsed="0.001515"/>
 </kw>
 <kw name="Check amount from invoice">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.472794" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.472794" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${TotalSumFromHeaders} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.473813" level="INFO">${TotalSumFromHeaders} = 1674.0</msg>
 <var>${TotalSumFromHeaders}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.472794" elapsed="0.001019"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${TotalSumFromRows} = 1674.0</msg>
+<msg time="2025-03-11T21:56:47.473813" level="INFO">${TotalSumFromRows} = 1674.0</msg>
 <var>${TotalSumFromRows}</var>
 <arg>${TotalSumFromRows}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.473813" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${diff} = 0.01</msg>
+<msg time="2025-03-11T21:56:47.473813" level="INFO">${diff} = 0.01</msg>
 <var>${diff}</var>
 <arg>0.01</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.473813" elapsed="0.000991"/>
 </kw>
 <kw name="Is Equal" owner="validate">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.474804" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <arg>${TotalSumFromRows}</arg>
 <arg>${diff}</arg>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.474804" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.474804" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.474804" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${total_amount}</arg>
 <arg>${summed_amounts}[${COUNTER}]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.472794" elapsed="0.002010"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -867,18 +880,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>3</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>Amount error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>HINTA KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -886,98 +905,98 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.475803" elapsed="0.000998"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.476801" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.474804" elapsed="0.001997"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.474804" elapsed="0.001997"/>
 </if>
 <kw name="Check Reference Number">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.582475" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.477802" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.476801" elapsed="0.001001"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589052" level="INFO">${invoice_number} = 143143</msg>
+<msg time="2025-03-11T21:56:47.477802" level="INFO">${invoice_number} = 143143</msg>
 <var>${invoice_number}</var>
 <arg>${invoice_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589052" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.477802" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${reference_number} = 1431432</msg>
+<msg time="2025-03-11T21:56:47.477802" level="INFO">${reference_number} = 1431432</msg>
 <var>${reference_number}</var>
 <arg>${reference_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589052" elapsed="0.000536"/>
+<status status="PASS" start="2025-03-11T21:56:47.477802" elapsed="0.001000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">Length is 6.</msg>
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${invoice_lenght} = 6</msg>
+<msg time="2025-03-11T21:56:47.478802" level="INFO">Length is 6.</msg>
+<msg time="2025-03-11T21:56:47.478802" level="INFO">${invoice_lenght} = 6</msg>
 <var>${invoice_lenght}</var>
 <arg>${invoice_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.478802" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">Length is 7.</msg>
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${reference_lenght} = 7</msg>
+<msg time="2025-03-11T21:56:47.478802" level="INFO">Length is 7.</msg>
+<msg time="2025-03-11T21:56:47.478802" level="INFO">${reference_lenght} = 7</msg>
 <var>${reference_lenght}</var>
 <arg>${reference_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.478802" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${is_longer} = True</msg>
+<msg time="2025-03-11T21:56:47.479802" level="INFO">${is_longer} = True</msg>
 <var>${is_longer}</var>
 <arg>${reference_lenght} &gt; ${invoice_lenght}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.478802" elapsed="0.001000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${starts_with_invoice} = True</msg>
+<msg time="2025-03-11T21:56:47.479802" level="INFO">${starts_with_invoice} = True</msg>
 <var>${starts_with_invoice}</var>
 <arg>'${reference_number}'.startswith('${invoice_number}')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.479802" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_longer} and ${starts_with_invoice}">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.480802" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.479802" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.479802" elapsed="0.001000"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.479802" elapsed="0.001000"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.480802" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.480802" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[0]</arg>
 <arg>${element}[1]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.582475" elapsed="0.007113"/>
+<status status="PASS" start="2025-03-11T21:56:47.476801" elapsed="0.004001"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -985,18 +1004,19 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.480802" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>ref error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.480802" elapsed="0.001000"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>HINTA KUSI</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.481802" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1004,86 +1024,130 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.481802" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.481802" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.481802" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.480802" elapsed="0.001000"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.480802" elapsed="0.001000"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${COUNTER} = 1</msg>
+<msg time="2025-03-11T21:56:47.482802" level="INFO">${COUNTER} = 1</msg>
 <var>${COUNTER}</var>
 <arg>${{${COUNTER} + 1}}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.481802" elapsed="0.001000"/>
 </kw>
+<if>
+<branch type="IF" condition="not ${errors_found}">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.482802" level="INFO">${invoiceStatus} = 0</msg>
+<var>${invoiceStatus}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.482802" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.483801" level="INFO">${InvoiceComment} = All ok</msg>
+<var>${InvoiceComment}</var>
+<arg>All ok</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.482802" elapsed="0.000999"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.483801" level="INFO">@{params} = [ 0 | All ok | 143143 ]</msg>
+<var>@{params}</var>
+<arg>${invoiceStatus}</arg>
+<arg>${InvoiceComment}</arg>
+<arg>${element}[0]</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.483801" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.484802" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</msg>
+<var>${updateStmt}</var>
+<arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.483801" elapsed="0.001001"/>
+</kw>
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-03-11T21:56:47.484802" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;&lt;/code&gt;&lt;br&gt;Parameters: &lt;code style="font-weight: bold;"&gt;('0', 'All ok', 143143)&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.485805" level="INFO">Commit the transaction</msg>
+<arg>${updateStmt}</arg>
+<arg>parameters=${params}</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.484802" elapsed="0.001003"/>
+</kw>
+<status status="PASS" start="2025-03-11T21:56:47.482802" elapsed="0.003003"/>
+</branch>
+<status status="PASS" start="2025-03-11T21:56:47.482802" elapsed="0.003003"/>
+</if>
 <var name="${element}">(143143, '1431432', 'FI12 3456 7890 1234 56', Decimal('1674.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.013960"/>
+<status status="PASS" start="2025-03-11T21:56:47.467153" elapsed="0.018652"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">(153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'))</msg>
+<msg time="2025-03-11T21:56:47.486802" level="INFO">(153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'))</msg>
 <arg>${element}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.486802" elapsed="0.000000"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.589588" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.487813" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.486802" elapsed="0.001011"/>
 </kw>
 <kw name="Remove String" owner="String">
-<msg time="2025-03-11T21:46:04.595993" level="INFO">${iban} = FI1234567890123456</msg>
+<msg time="2025-03-11T21:56:47.487813" level="INFO">${iban} = FI1234567890123456</msg>
 <var>${iban}</var>
 <arg>${iban}</arg>
 <arg>${SPACE}</arg>
 <doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.006405"/>
+<status status="PASS" start="2025-03-11T21:56:47.487813" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.596364" level="INFO">Length is 18.</msg>
-<msg time="2025-03-11T21:46:04.596364" level="INFO">${lenght} = 18</msg>
+<msg time="2025-03-11T21:56:47.487813" level="INFO">Length is 18.</msg>
+<msg time="2025-03-11T21:56:47.487813" level="INFO">${lenght} = 18</msg>
 <var>${lenght}</var>
 <arg>${iban}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.596364" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.487813" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${lenght} == 18">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.597331" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.488802" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.596364" elapsed="0.000967"/>
+<status status="PASS" start="2025-03-11T21:56:47.488802" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.596364" elapsed="0.001095"/>
+<status status="PASS" start="2025-03-11T21:56:47.488802" elapsed="0.000000"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.596364" elapsed="0.001179"/>
+<status status="PASS" start="2025-03-11T21:56:47.488802" elapsed="0.000000"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.597543" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.488802" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.597543" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.488802" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[2]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.007955"/>
+<status status="PASS" start="2025-03-11T21:56:47.486802" elapsed="0.003054"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1091,18 +1155,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.597543" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.490088" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.597543" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.490088" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.490088" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>IBAN KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.597543" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.490088" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1110,77 +1180,77 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.598557" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.490088" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.598557" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.491087" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.598557" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.491087" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.597543" elapsed="0.001014"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.489856" elapsed="0.001231"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.597543" elapsed="0.001014"/>
+<status status="PASS" start="2025-03-11T21:56:47.489856" elapsed="0.001231"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.598557" level="INFO">${total_amount} = 3348.00</msg>
+<msg time="2025-03-11T21:56:47.491087" level="INFO">${total_amount} = 3348.00</msg>
 <var>${total_amount}</var>
 <arg>${element}[3]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.598557" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.491087" elapsed="0.000000"/>
 </kw>
 <kw name="Check amount from invoice">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.599551" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.492088" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.599551" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.492088" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.599551" level="INFO">${TotalSumFromHeaders} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.492088" level="INFO">${TotalSumFromHeaders} = 3348.0</msg>
 <var>${TotalSumFromHeaders}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.599551" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.492088" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.600552" level="INFO">${TotalSumFromRows} = 3348.0</msg>
+<msg time="2025-03-11T21:56:47.493087" level="INFO">${TotalSumFromRows} = 3348.0</msg>
 <var>${TotalSumFromRows}</var>
 <arg>${TotalSumFromRows}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.599551" elapsed="0.001001"/>
+<status status="PASS" start="2025-03-11T21:56:47.492088" elapsed="0.000999"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.600552" level="INFO">${diff} = 0.01</msg>
+<msg time="2025-03-11T21:56:47.493087" level="INFO">${diff} = 0.01</msg>
 <var>${diff}</var>
 <arg>0.01</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.600552" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.493087" elapsed="0.000000"/>
 </kw>
 <kw name="Is Equal" owner="validate">
-<msg time="2025-03-11T21:46:04.600552" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.494087" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <arg>${TotalSumFromRows}</arg>
 <arg>${diff}</arg>
-<status status="PASS" start="2025-03-11T21:46:04.600552" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.493087" elapsed="0.001000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.600552" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.494087" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.601552" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.494087" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${total_amount}</arg>
 <arg>${summed_amounts}[${COUNTER}]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.598557" elapsed="0.002995"/>
+<status status="PASS" start="2025-03-11T21:56:47.491087" elapsed="0.003000"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1188,18 +1258,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>3</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.494087" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>Amount error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>HINTA KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1207,98 +1283,98 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.000999"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.602603" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.495086" elapsed="0.001001"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.601552" elapsed="0.001051"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.494087" elapsed="0.002000"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.601552" elapsed="0.001051"/>
+<status status="PASS" start="2025-03-11T21:56:47.494087" elapsed="0.002000"/>
 </if>
 <kw name="Check Reference Number">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.602896" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.496087" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.602896" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.496087" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.602896" level="INFO">${invoice_number} = 153143</msg>
+<msg time="2025-03-11T21:56:47.497094" level="INFO">${invoice_number} = 153143</msg>
 <var>${invoice_number}</var>
 <arg>${invoice_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.602896" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.496087" elapsed="0.001007"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.603914" level="INFO">${reference_number} = 1531439</msg>
+<msg time="2025-03-11T21:56:47.497094" level="INFO">${reference_number} = 1531439</msg>
 <var>${reference_number}</var>
 <arg>${reference_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.603914" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.497094" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.603914" level="INFO">Length is 6.</msg>
-<msg time="2025-03-11T21:46:04.603914" level="INFO">${invoice_lenght} = 6</msg>
+<msg time="2025-03-11T21:56:47.497094" level="INFO">Length is 6.</msg>
+<msg time="2025-03-11T21:56:47.497094" level="INFO">${invoice_lenght} = 6</msg>
 <var>${invoice_lenght}</var>
 <arg>${invoice_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.603914" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.497094" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.604910" level="INFO">Length is 7.</msg>
-<msg time="2025-03-11T21:46:04.604910" level="INFO">${reference_lenght} = 7</msg>
+<msg time="2025-03-11T21:56:47.498094" level="INFO">Length is 7.</msg>
+<msg time="2025-03-11T21:56:47.498094" level="INFO">${reference_lenght} = 7</msg>
 <var>${reference_lenght}</var>
 <arg>${reference_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.604910" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.497094" elapsed="0.001000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.604910" level="INFO">${is_longer} = True</msg>
+<msg time="2025-03-11T21:56:47.498094" level="INFO">${is_longer} = True</msg>
 <var>${is_longer}</var>
 <arg>${reference_lenght} &gt; ${invoice_lenght}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.604910" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.498094" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.605898" level="INFO">${starts_with_invoice} = True</msg>
+<msg time="2025-03-11T21:56:47.498094" level="INFO">${starts_with_invoice} = True</msg>
 <var>${starts_with_invoice}</var>
 <arg>'${reference_number}'.startswith('${invoice_number}')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.604910" elapsed="0.000988"/>
+<status status="PASS" start="2025-03-11T21:56:47.498094" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_longer} and ${starts_with_invoice}">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.606190" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.499309" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.499158" elapsed="0.000151"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.605898" elapsed="0.000292"/>
+<status status="PASS" start="2025-03-11T21:56:47.499094" elapsed="0.000215"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.605898" elapsed="0.000292"/>
+<status status="PASS" start="2025-03-11T21:56:47.499094" elapsed="0.000215"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.499309" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.606190" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.499309" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[0]</arg>
 <arg>${element}[1]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.602896" elapsed="0.003294"/>
+<status status="PASS" start="2025-03-11T21:56:47.496087" elapsed="0.003222"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1306,18 +1382,19 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.499309" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>ref error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.499309" elapsed="0.001010"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>HINTA KUSI</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.500319" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1325,86 +1402,130 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.500319" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.500319" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.500319" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.499309" elapsed="0.001010"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.499309" elapsed="0.001010"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.606190" level="INFO">${COUNTER} = 2</msg>
+<msg time="2025-03-11T21:56:47.501311" level="INFO">${COUNTER} = 2</msg>
 <var>${COUNTER}</var>
 <arg>${{${COUNTER} + 1}}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.500319" elapsed="0.000992"/>
 </kw>
+<if>
+<branch type="IF" condition="not ${errors_found}">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.502310" level="INFO">${invoiceStatus} = 0</msg>
+<var>${invoiceStatus}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.501311" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.502310" level="INFO">${InvoiceComment} = All ok</msg>
+<var>${InvoiceComment}</var>
+<arg>All ok</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.502310" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.502310" level="INFO">@{params} = [ 0 | All ok | 153143 ]</msg>
+<var>@{params}</var>
+<arg>${invoiceStatus}</arg>
+<arg>${InvoiceComment}</arg>
+<arg>${element}[0]</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.502310" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.503322" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</msg>
+<var>${updateStmt}</var>
+<arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.502310" elapsed="0.001012"/>
+</kw>
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-03-11T21:56:47.503322" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;&lt;/code&gt;&lt;br&gt;Parameters: &lt;code style="font-weight: bold;"&gt;('0', 'All ok', 153143)&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.503322" level="INFO">Commit the transaction</msg>
+<arg>${updateStmt}</arg>
+<arg>parameters=${params}</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.503322" elapsed="0.000990"/>
+</kw>
+<status status="PASS" start="2025-03-11T21:56:47.501311" elapsed="0.003001"/>
+</branch>
+<status status="PASS" start="2025-03-11T21:56:47.501311" elapsed="0.003001"/>
+</if>
 <var name="${element}">(153143, '1531439', 'FI12 3456 7890 1234 56', Decimal('3348.00'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.589588" elapsed="0.016602"/>
+<status status="PASS" start="2025-03-11T21:56:47.485805" elapsed="0.018507"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.606190" level="INFO">(1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'))</msg>
+<msg time="2025-03-11T21:56:47.505310" level="INFO">(1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'))</msg>
 <arg>${element}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.504312" elapsed="0.000998"/>
 </kw>
 <kw name="Check IBAN">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.609868" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.505310" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.609868" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.505310" elapsed="0.000000"/>
 </kw>
 <kw name="Remove String" owner="String">
-<msg time="2025-03-11T21:46:04.609868" level="INFO">${iban} = FI0512345600789101</msg>
+<msg time="2025-03-11T21:56:47.506312" level="INFO">${iban} = FI0512345600789101</msg>
 <var>${iban}</var>
 <arg>${iban}</arg>
 <arg>${SPACE}</arg>
 <doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.609868" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.505310" elapsed="0.001002"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.610876" level="INFO">Length is 18.</msg>
-<msg time="2025-03-11T21:46:04.610876" level="INFO">${lenght} = 18</msg>
+<msg time="2025-03-11T21:56:47.506312" level="INFO">Length is 18.</msg>
+<msg time="2025-03-11T21:56:47.506312" level="INFO">${lenght} = 18</msg>
 <var>${lenght}</var>
 <arg>${iban}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.609868" elapsed="0.001008"/>
+<status status="PASS" start="2025-03-11T21:56:47.506312" elapsed="0.000000"/>
 </kw>
 <if>
 <branch type="IF" condition="${lenght} == 18">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.506312" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.506312" elapsed="0.000998"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.506312" elapsed="0.000998"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.506312" elapsed="0.000998"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.507310" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.507310" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[2]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.004911"/>
+<status status="PASS" start="2025-03-11T21:56:47.505310" elapsed="0.002000"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1412,18 +1533,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>2</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.507310" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>iban error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.507310" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.508311" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>IBAN KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.508311" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1431,77 +1558,77 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.508311" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.508311" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.508311" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.507310" elapsed="0.001001"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.507310" elapsed="0.001001"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${total_amount} = 576.60</msg>
+<msg time="2025-03-11T21:56:47.509311" level="INFO">${total_amount} = 576.60</msg>
 <var>${total_amount}</var>
 <arg>${element}[3]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.508311" elapsed="0.001000"/>
 </kw>
 <kw name="Check amount from invoice">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.509311" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.509311" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${TotalSumFromHeaders} = 576.6</msg>
+<msg time="2025-03-11T21:56:47.510320" level="INFO">${TotalSumFromHeaders} = 576.6</msg>
 <var>${TotalSumFromHeaders}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.510320" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${TotalSumFromRows} = 576.6</msg>
+<msg time="2025-03-11T21:56:47.510320" level="INFO">${TotalSumFromRows} = 576.6</msg>
 <var>${TotalSumFromRows}</var>
 <arg>${TotalSumFromRows}</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.510320" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To Number" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${diff} = 0.01</msg>
+<msg time="2025-03-11T21:56:47.511313" level="INFO">${diff} = 0.01</msg>
 <var>${diff}</var>
 <arg>0.01</arg>
 <doc>Converts the given item to a floating point number.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.511313" elapsed="0.000000"/>
 </kw>
 <kw name="Is Equal" owner="validate">
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.511313" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${TotalSumFromHeaders}</arg>
 <arg>${TotalSumFromRows}</arg>
 <arg>${diff}</arg>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.511313" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.511313" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.611101" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.511313" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${total_amount}</arg>
 <arg>${summed_amounts}[${COUNTER}]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.509311" elapsed="0.002002"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1509,18 +1636,24 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>3</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>Amount error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>HINTA KUSI</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1528,98 +1661,98 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.001001"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.616829" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.513320" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.611101" elapsed="0.005728"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.512319" elapsed="0.001001"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.611101" elapsed="0.005728"/>
+<status status="PASS" start="2025-03-11T21:56:47.512319" elapsed="0.001001"/>
 </if>
 <kw name="Check Reference Number">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.617178" level="INFO">${status} = False</msg>
+<msg time="2025-03-11T21:56:47.513320" level="INFO">${status} = False</msg>
 <var>${status}</var>
 <arg>${False}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.617178" elapsed="0.001058"/>
+<status status="PASS" start="2025-03-11T21:56:47.513320" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.618475" level="INFO">${invoice_number} = 1543235</msg>
+<msg time="2025-03-11T21:56:47.514324" level="INFO">${invoice_number} = 1543235</msg>
 <var>${invoice_number}</var>
 <arg>${invoice_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.618391" elapsed="0.000084"/>
+<status status="PASS" start="2025-03-11T21:56:47.514324" elapsed="0.000000"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.618475" level="INFO">${reference_number} = 15432359</msg>
+<msg time="2025-03-11T21:56:47.514324" level="INFO">${reference_number} = 15432359</msg>
 <var>${reference_number}</var>
 <arg>${reference_number}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.618475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.514324" elapsed="0.000000"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.618475" level="INFO">Length is 7.</msg>
-<msg time="2025-03-11T21:46:04.618475" level="INFO">${invoice_lenght} = 7</msg>
+<msg time="2025-03-11T21:56:47.514324" level="INFO">Length is 7.</msg>
+<msg time="2025-03-11T21:56:47.515322" level="INFO">${invoice_lenght} = 7</msg>
 <var>${invoice_lenght}</var>
 <arg>${invoice_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.618475" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.514324" elapsed="0.000998"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.619490" level="INFO">Length is 8.</msg>
-<msg time="2025-03-11T21:46:04.619490" level="INFO">${reference_lenght} = 8</msg>
+<msg time="2025-03-11T21:56:47.515322" level="INFO">Length is 8.</msg>
+<msg time="2025-03-11T21:56:47.515322" level="INFO">${reference_lenght} = 8</msg>
 <var>${reference_lenght}</var>
 <arg>${reference_number}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.619490" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.515322" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.619490" level="INFO">${is_longer} = True</msg>
+<msg time="2025-03-11T21:56:47.515322" level="INFO">${is_longer} = True</msg>
 <var>${is_longer}</var>
 <arg>${reference_lenght} &gt; ${invoice_lenght}</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.619490" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.515322" elapsed="0.000000"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.620476" level="INFO">${starts_with_invoice} = True</msg>
+<msg time="2025-03-11T21:56:47.516313" level="INFO">${starts_with_invoice} = True</msg>
 <var>${starts_with_invoice}</var>
 <arg>'${reference_number}'.startswith('${invoice_number}')</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.619490" elapsed="0.000986"/>
+<status status="PASS" start="2025-03-11T21:56:47.515322" elapsed="0.000991"/>
 </kw>
 <if>
 <branch type="IF" condition="${is_longer} and ${starts_with_invoice}">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.620476" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.516313" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${True}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.620476" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.516313" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2025-03-11T21:46:04.620476" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.516313" elapsed="0.000000"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.620476" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.516313" elapsed="0.000000"/>
 </if>
 <return>
 <value>${status}</value>
-<status status="PASS" start="2025-03-11T21:46:04.620476" elapsed="0.000962"/>
+<status status="PASS" start="2025-03-11T21:56:47.516313" elapsed="0.000000"/>
 </return>
-<msg time="2025-03-11T21:46:04.621438" level="INFO">${status} = True</msg>
+<msg time="2025-03-11T21:56:47.517319" level="INFO">${status} = True</msg>
 <var>${status}</var>
 <arg>${element}[0]</arg>
 <arg>${element}[1]</arg>
-<status status="PASS" start="2025-03-11T21:46:04.617178" elapsed="0.004464"/>
+<status status="PASS" start="2025-03-11T21:56:47.513320" elapsed="0.003999"/>
 </kw>
 <if>
 <branch type="IF" condition="not ${status}">
@@ -1627,18 +1760,19 @@ usually they are tuples or tuple-like objects.</doc>
 <var>${invoiceStatus}</var>
 <arg>1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.517319" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${InvoiceComment}</var>
 <arg>ref error</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.517319" elapsed="0.000000"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<arg>HINTA KUSI</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${errors_found}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-03-11T21:56:47.517319" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
 <var>@{params}</var>
@@ -1646,41 +1780,85 @@ usually they are tuples or tuple-like objects.</doc>
 <arg>${InvoiceComment}</arg>
 <arg>${element}[0]</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.518311" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${updateStmt}</var>
 <arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.518311" elapsed="0.000000"/>
 </kw>
 <kw name="Execute Sql String" owner="DatabaseLibrary">
 <arg>${updateStmt}</arg>
 <arg>parameters=${params}</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621788" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.518311" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2025-03-11T21:46:04.621642" elapsed="0.000146"/>
+<status status="NOT RUN" start="2025-03-11T21:56:47.517319" elapsed="0.000992"/>
 </branch>
-<status status="PASS" start="2025-03-11T21:46:04.621642" elapsed="0.001159"/>
+<status status="PASS" start="2025-03-11T21:56:47.517319" elapsed="0.000992"/>
 </if>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-11T21:46:04.622801" level="INFO">${COUNTER} = 3</msg>
+<msg time="2025-03-11T21:56:47.519312" level="INFO">${COUNTER} = 3</msg>
 <var>${COUNTER}</var>
 <arg>${{${COUNTER} + 1}}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-11T21:46:04.622801" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-11T21:56:47.518311" elapsed="0.001144"/>
 </kw>
+<if>
+<branch type="IF" condition="not ${errors_found}">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.519455" level="INFO">${invoiceStatus} = 0</msg>
+<var>${invoiceStatus}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.519455" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.519455" level="INFO">${InvoiceComment} = All ok</msg>
+<var>${InvoiceComment}</var>
+<arg>All ok</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.519455" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.520465" level="INFO">@{params} = [ 0 | All ok | 1543235 ]</msg>
+<var>@{params}</var>
+<arg>${invoiceStatus}</arg>
+<arg>${InvoiceComment}</arg>
+<arg>${element}[0]</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.519455" elapsed="0.001010"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-03-11T21:56:47.520465" level="INFO">${updateStmt} = update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</msg>
+<var>${updateStmt}</var>
+<arg>update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.520465" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-03-11T21:56:47.520465" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;update invoiceheader set invoicestatus_id = %s, comments = %s where invoicenumber = %s;&lt;/code&gt;&lt;br&gt;Parameters: &lt;code style="font-weight: bold;"&gt;('0', 'All ok', 1543235)&lt;/code&gt;</msg>
+<msg time="2025-03-11T21:56:47.521484" level="INFO">Commit the transaction</msg>
+<arg>${updateStmt}</arg>
+<arg>parameters=${params}</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="PASS" start="2025-03-11T21:56:47.520465" elapsed="0.001019"/>
+</kw>
+<status status="PASS" start="2025-03-11T21:56:47.519455" elapsed="0.003018"/>
+</branch>
+<status status="PASS" start="2025-03-11T21:56:47.519455" elapsed="0.003018"/>
+</if>
 <var name="${element}">(1543235, '15432359', 'FI05 1234 5600 7891 01', Decimal('576.60'))</var>
-<status status="PASS" start="2025-03-11T21:46:04.606190" elapsed="0.016611"/>
+<status status="PASS" start="2025-03-11T21:56:47.504312" elapsed="0.018161"/>
 </iter>
 <var>${element}</var>
 <value>@{Invoices}</value>
-<status status="PASS" start="2025-03-11T21:46:04.575628" elapsed="0.047173"/>
+<status status="PASS" start="2025-03-11T21:56:47.467153" elapsed="0.055320"/>
 </for>
-<status status="PASS" start="2025-03-11T21:46:04.429841" elapsed="0.193950"/>
+<status status="PASS" start="2025-03-11T21:56:47.366437" elapsed="0.156036"/>
 </test>
-<status status="PASS" start="2025-03-11T21:46:04.376905" elapsed="0.247886"/>
+<status status="PASS" start="2025-03-11T21:56:47.308945" elapsed="0.215529"/>
 </suite>
 <statistics>
 <total>
